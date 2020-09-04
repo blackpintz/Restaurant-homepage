@@ -1,5 +1,6 @@
 import './style.css';
+import homepage from './home';
+import navbar from './navbar';
 
-const tag = document.querySelector('h1');
-
-tag.className = 'tag';
+navbar();
+homepage();
