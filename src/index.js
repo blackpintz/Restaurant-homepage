@@ -1,3 +1,5 @@
-let tag = document.querySelector('h1')
+import './style.css';
 
-tag.style.color = "blue"
+const tag = document.querySelector('h1');
+
+tag.className = 'tag';
