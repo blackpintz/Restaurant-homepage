@@ -1,3 +1,5 @@
+import aboutpage from './about';
+
 export default function navbar() {
   const content = document.getElementById('content');
 
@@ -15,4 +17,17 @@ export default function navbar() {
   navbar.appendChild(about);
   navbar.appendChild(menu);
   navbar.appendChild(contact);
+
+  const navTitle = document.getElementsByTagName('h3');
+  const navArray = [...navTitle];
+
+  navArray.forEach((nav) => {
+    nav.addEventListener('click', () => {
+      if (nav.innerHTML === 'About') {
+        const wrapper = document.getElementById('wrapper');
+        wrapper.remove();
+        aboutpage();
+      }
+    });
+  });
 }
