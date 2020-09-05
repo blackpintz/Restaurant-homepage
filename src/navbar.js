@@ -1,5 +1,7 @@
 import aboutpage from './about';
 import menupage from './menu';
+import contactpage from './contact';
+import homepage from './home';
 
 export default function navbar() {
   const content = document.getElementById('content');
@@ -7,6 +9,8 @@ export default function navbar() {
   const navbar = document.createElement('div');
   navbar.className = 'navbar';
 
+  const home = document.createElement('h3');
+  home.innerHTML = 'Home';
   const about = document.createElement('h3');
   about.innerHTML = 'About';
   const menu = document.createElement('h3');
@@ -15,6 +19,7 @@ export default function navbar() {
   contact.innerHTML = 'Contact';
 
   content.appendChild(navbar);
+  navbar.appendChild(home);
   navbar.appendChild(about);
   navbar.appendChild(menu);
   navbar.appendChild(contact);
@@ -24,6 +29,11 @@ export default function navbar() {
 
   navArray.forEach((nav) => {
     nav.addEventListener('click', () => {
+      if (nav.innerHTML === 'Home') {
+        const wrapper = document.getElementById('wrapper');
+        wrapper.remove();
+        homepage();
+      }
       if (nav.innerHTML === 'About') {
         const wrapper = document.getElementById('wrapper');
         wrapper.remove();
@@ -33,6 +43,11 @@ export default function navbar() {
         const wrapper = document.getElementById('wrapper');
         wrapper.remove();
         menupage();
+      }
+      if (nav.innerHTML === 'Contact') {
+        const wrapper = document.getElementById('wrapper');
+        wrapper.remove();
+        contactpage();
       }
     });
   });

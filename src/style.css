@@ -60,3 +60,8 @@ body {
   margin: auto;
   justify-content: space-between;
 }
+
+.contact {
+  width: 50%;
+  margin: auto;
+}
