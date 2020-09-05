@@ -38,7 +38,7 @@ body {
   font-size: 18px;
 }
 
-#wrapper p {
+.home p {
   position: relative;
   font-size: 40px;
   font-weight: bold;
@@ -52,4 +52,11 @@ body {
   margin: auto;
   position: relative;
   top: 20%;
+}
+
+.menu {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: space-between;
 }

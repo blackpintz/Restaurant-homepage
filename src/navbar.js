@@ -1,4 +1,5 @@
 import aboutpage from './about';
+import menupage from './menu';
 
 export default function navbar() {
   const content = document.getElementById('content');
@@ -27,6 +28,11 @@ export default function navbar() {
         const wrapper = document.getElementById('wrapper');
         wrapper.remove();
         aboutpage();
+      }
+      if (nav.innerHTML === 'Menu') {
+        const wrapper = document.getElementById('wrapper');
+        wrapper.remove();
+        menupage();
       }
     });
   });

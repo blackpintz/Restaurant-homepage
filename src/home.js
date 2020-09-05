@@ -2,6 +2,7 @@ export default function home() {
   const content = document.getElementById('content');
 
   const wrapper = document.createElement('div');
+  wrapper.className = 'home';
   wrapper.id = 'wrapper';
   const pTag = document.createElement('p');
   pTag.innerHTML = 'Welcome to Java Restaurant!';
