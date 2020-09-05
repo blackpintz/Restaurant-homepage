@@ -24,9 +24,18 @@ body {
   padding-left: 7px;
 }
 
+.about h3 {
+  font-size: 25px;
+  text-align: center;
+}
+
 .navbar h3:hover {
   color: #fff;
   cursor: pointer;
+}
+
+.about p {
+  font-size: 18px;
 }
 
 #wrapper p {
@@ -36,4 +45,11 @@ body {
   top: 200px;
   left: 450px;
   color: #35281e;
+}
+
+.about {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: 20%;
 }
