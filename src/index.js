@@ -1,8 +1,8 @@
 import './style.css';
-import homepage from './home';
-import aboutpage from './about';
-import menupage from './menu';
-import contactpage from './contact';
+import homepage from './components/home';
+import aboutpage from './components/about';
+import menupage from './components/menu';
+import contactpage from './components/contact';
 
 function navbar() {
   const content = document.getElementById('content');
