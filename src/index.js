@@ -1,4 +1,5 @@
 import './style.css';
+import element from './components/element';
 import homepage from './components/home';
 import aboutpage from './components/about';
 import menupage from './components/menu';
@@ -10,45 +11,39 @@ function navbar() {
   const navbar = document.createElement('div');
   navbar.className = 'navbar';
 
-  const home = document.createElement('h3');
-  home.innerHTML = 'Home';
-  const about = document.createElement('h3');
-  about.innerHTML = 'About';
-  const menu = document.createElement('h3');
-  menu.innerHTML = 'Menu';
-  const contact = document.createElement('h3');
-  contact.innerHTML = 'Contact';
+  element('h3', 'Home', navbar);
+  element('h3', 'About', navbar);
+  element('h3', 'Menu', navbar);
+  element('h3', 'Contact', navbar);
 
+  const updatePage = (page) => {
+    const wrapper = document.getElementById('wrapper');
+    wrapper.remove();
+    return page;
+  };
   content.appendChild(navbar);
-  navbar.appendChild(home);
-  navbar.appendChild(about);
-  navbar.appendChild(menu);
-  navbar.appendChild(contact);
 
   const navTitle = document.getElementsByTagName('h3');
   const navArray = [...navTitle];
 
   navArray.forEach((nav) => {
     nav.addEventListener('click', () => {
-      if (nav.innerHTML === 'Home') {
-        const wrapper = document.getElementById('wrapper');
-        wrapper.remove();
-        homepage();
-      }
-      if (nav.innerHTML === 'About') {
-        const wrapper = document.getElementById('wrapper');
-        wrapper.remove();
-        aboutpage();
-      }
-      if (nav.innerHTML === 'Menu') {
-        const wrapper = document.getElementById('wrapper');
-        wrapper.remove();
-        menupage();
-      }
-      if (nav.innerHTML === 'Contact') {
-        const wrapper = document.getElementById('wrapper');
-        wrapper.remove();
-        contactpage();
+      switch (nav.innerText) {
+        case 'Home':
+          updatePage(homepage());
+          break;
+        case 'About':
+          updatePage(aboutpage());
+          break;
+        case 'Menu':
+          updatePage(menupage());
+          break;
+        case 'Contact':
+          updatePage(contactpage());
+          break;
+        default:
+          updatePage(homepage());
+          break;
       }
     });
   });
